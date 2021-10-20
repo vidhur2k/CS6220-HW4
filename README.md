@@ -9,7 +9,20 @@ The repo contains the following files/directories:
 # Running Experiments
 Our experiments consist of running each of the two FIM implementations on the two benchmark datasets.
 
+In order to run *timed* experiments with the T10I4D100K dataset, run the following commands:
+
+`time fimi01/apriori data/T10I4D100K.dat <MIN_SUPPORT_THRESHOLD> outputs/<OUTPUT_FILE_NAME>`
+`time fimi11/apriori/fim_all data/T10I4D100K.dat <MIN_SUPPORT_THRESHOLD * 100> outputs/<OUTPUT_FILE_NAME>`
+
+In order to run *timed* experiments with the Kosarak dataset, run the following commands:
+
+`time fimi01/apriori data/kosarak.dat <MIN_SUPPORT_THRESHOLD> outputs/<OUTPUT_FILE_NAME>`
+`time fimi11/apriori/fim_all data/kosarak.dat <MIN_SUPPORT_THRESHOLD * 100> outputs/<OUTPUT_FILE_NAME>`
+
+(**NOTE:** For the Borgelt implementation, the min_support_threshold is multiplied by 100 due to the way the algorithm is scaled.)
 # References
 Ferenc Bodon. A fast APRIORI implementation. Informatics Laboratory, Computer and Automation Research Institute, Hungarian Academy of Sciences.
-Ferenc Bodon, Surprising results of trie-based FIM algorithms, Department of Computer Science and Information Theory, Budapest University of Technology and Economics.
+
+Christian Borgelt, Efficient Implementations of Apriori and Eclat.
+
 Frequent Itemset Mining Datasets Repository. http://fimi.uantwerpen.be/data/
